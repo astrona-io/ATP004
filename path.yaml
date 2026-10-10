@@ -1,0 +1,100 @@
+apiVersion: content.astrona.io/v1alpha1
+kind: TrainingPath
+metadata:
+  id: ATP004
+  slug: certified-cloud-native-platform-engineer-cnpe
+  title: "Certified Cloud Native Platform Engineer (CNPE)"
+  description: >-
+    The Certified Cloud Native Platform Engineer track: one course per exam
+    domain — platform architecture and infrastructure, GitOps and continuous
+    delivery, platform APIs and self-service, observability and operations,
+    and security and policy enforcement — with readings and hands-on
+    playgrounds that run on your own computer with the Astrona CLI.
+  version: "1.0.0"
+  language: "en"
+  authors:
+    - name: "Paris Nakita Kejser"
+      email: "paris@astrona.io"
+      company: "Astrona.io"
+  tags:
+    - "Platform Engineering"
+    - "GitOps"
+    - "Kubernetes"
+    - "Certification Preparation"
+    - "CNPE"
+  license: "Apache-2.0"
+
+spec:
+  audience: "Kubernetes engineers preparing for the Certified Cloud Native Platform Engineer exam."
+  difficulty: "Advanced"
+
+  examPreparation:
+    enabled: true
+    title: "Certified Cloud Native Platform Engineer (CNPE)"
+    officialSyllabusUrl: "https://training.linuxfoundation.org/certification/certified-cloud-native-platform-engineer-cnpe/"
+    examId: "CNPE"
+    provider: "CNCF / The Linux Foundation"
+
+  prerequisites:
+    - "Working knowledge of Kubernetes resources, YAML and kubectl, at the level of the CKA or CKAD exam."
+    - "A computer that can run the Astrona CLI with Docker or Podman, for the playgrounds and labs."
+
+  learningOutcomes:
+    - "Size, place, isolate and account for workloads on a shared multi-tenant platform."
+    - "Deliver applications and infrastructure with GitOps, CI pipelines and progressive delivery."
+    - "Build self-service platform APIs with CRDs, operators, Crossplane and Argo Workflows."
+    - "Monitor, alert, trace and troubleshoot the platform with Prometheus, Grafana, OpenTelemetry and Jaeger."
+    - "Secure service-to-service traffic and enforce policy with RBAC, admission control, Kyverno and Gatekeeper."
+
+  # One stage per exam domain; stage titles name the domains exactly as the
+  # exam does, and the weights follow the exam.
+  stages:
+    - id: "ATP004-STG001"
+      title: "Platform Architecture and Infrastructure"
+      description: "Compute, networking and storage best practices, right-sizing and scaling with cost data from OpenCost, and multi-tenant resource controls."
+      weight: 15
+      content:
+        - ref: ATS017
+          repository: "https://github.com/astrona-io/ATS017"
+          path: "."
+          version: "1.0.0"
+
+    - id: "ATP004-STG002"
+      title: "GitOps and Continuous Delivery"
+      description: "GitOps with Argo CD and Flux, CI pipelines with Tekton, and progressive delivery with Argo Rollouts and Flagger."
+      weight: 25
+      content:
+        - ref: ATS018
+          repository: "https://github.com/astrona-io/ATS018"
+          path: "."
+          version: "1.0.0"
+
+    - id: "ATP004-STG003"
+      title: "Platform APIs and Self-Service Capabilities"
+      description: "Custom Resource Definitions, Kubernetes operators, Crossplane compositions, and self-service provisioning with Argo Workflows and Argo Events."
+      weight: 25
+      content:
+        - ref: ATS019
+          repository: "https://github.com/astrona-io/ATS019"
+          path: "."
+          version: "1.0.0"
+
+    - id: "ATP004-STG004"
+      title: "Observability and Operations"
+      description: "Monitoring and alerting with Prometheus, dashboards in Grafana, logs and traces with OpenTelemetry and Jaeger, delivery metrics, and incident diagnosis."
+      weight: 20
+      content:
+        - ref: ATS020
+          repository: "https://github.com/astrona-io/ATS020"
+          path: "."
+          version: "1.0.0"
+
+    - id: "ATP004-STG005"
+      title: "Security and Policy Enforcement"
+      description: "Mutual TLS with Istio and Linkerd, RBAC and Pod Security, Kyverno, Gatekeeper and ValidatingAdmissionPolicy, audit trails, and security checks in pipelines."
+      weight: 15
+      content:
+        - ref: ATS021
+          repository: "https://github.com/astrona-io/ATS021"
+          path: "."
+          version: "1.0.0"
